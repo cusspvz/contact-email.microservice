@@ -13,7 +13,7 @@ env:
 
 script:
   - npm install
-  - npm run build &&
+  - npm run build
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker build -t ${IMAGE}:${TRAVIS_COMMIT:0:8} .
   - docker tag ${IMAGE}:${TRAVIS_COMMIT:0:8} ${IMAGE}:latest

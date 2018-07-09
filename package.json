@@ -12,6 +12,7 @@
   "author": "José Moreira",
   "license": "ISC",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
