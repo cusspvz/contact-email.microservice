@@ -8,18 +8,16 @@ cache:
 services:
   - docker
 
+env:
+  - IMAGE=cusspvz/contact-email.microservice
+
 script:
-  - |
-    npm install &&
-    npm run build &&
-    exit 0 || exit 1
-  - |
-    export IMAGE=cusspvz/contact-email.microservice &&
-    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" &&
-    docker build -t ${IMAGE}:${TRAVIS_COMMIT:0:8} . &&
-    docker tag ${IMAGE}:${TRAVIS_COMMIT:0:8} ${IMAGE}:latest &&
-    docker push ${IMAGE} &&
-    exit 0 || exit 1
+  - npm install
+  - npm run build &&
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker build -t ${IMAGE}:${TRAVIS_COMMIT:0:8} .
+  - docker tag ${IMAGE}:${TRAVIS_COMMIT:0:8} ${IMAGE}:latest
+  - docker push ${IMAGE}
 
 branches:
   only:
