@@ -29,8 +29,7 @@
 
 ```
 docker pull cusspvz/contact-email.microservice
-
-docker run -ti cusspvz/contact-email.microservice
+docker run -ti --rm --env-file path/to/settings.env cusspvz/contact-email.microservice
 ```
 
 ## Configuration
