@@ -1,12 +1,13 @@
-# Contact Email Microservice 
-## A configurable Microservice that centralizes contact requests
+## @cusspvz/contact-email.microservice
+### Contact Email Microservice 
+A configurable Microservice that centralizes contact requests
 
-@cusspvz/contact-email.microservice
 
 ## Features
 
 ### Anti-Spam
 + reCAPTCHA
++ CORS
 
 ### Client
 + GMail
@@ -27,4 +28,64 @@ docker run -ti cusspvz/contact-email.microservice
 
 ## Configuration
 
-### 
+### Nodemailer
+
+#### `NODEMAILER_SERVICE`
++ Default: `null`
++ Description: Defines a service for the transport
+
+#### `NODEMAILER_SECURE`
++ Default: `false`
++ Description: Set this variable as `1` if you want to setup authentication
+
+#### `NODEMAILER_AUTH`
++ Default: `false`
++ Description: Set this variable as `1` if you want to setup authentication
+
+#### `NODEMAILER_USER`
++ Default: `false`
++ Description: Sets the user on authentication.
++ Note: Requires `NODEMAILER_AUTH` to be set
+
+#### `NODEMAILER_PASS`
++ Default: `false`
++ Description: Sets the password on authentication.
++ Note: Requires `NODEMAILER_AUTH` to be set
+
+
+### CORS
+
+#### `CORS_ORIGIN_REGEXP`
++ Default: `null`
++ Description: Defines a CORS origin based on a regexp
++ Note: Please insert the regexp without the slashes
++ Example: `(?:(www|marketing).)website.(com|org)`
+
+
+#### `CORS_ORIGIN_COMMA_SEP`
++ Default: `null`
++ Description: Defines a CORS origin based on a comma separated string
++ Note: Please insert the urls without extra spaces
++ Example: `website.com,website.org,www.website.com,www.website.org`
+
+
+
+### reCAPTCHA
+
+#### `RECAPTCHA`
++ Default: `null`
++ Description: Set this variable as `1` if you want to setup reCAPTCHA
+
+#### `RECAPTCHA_PUBLIC_KEY`
++ Default: `null`
++ Description: Defines the reCAPTCHA Public key
++ Note: Requires `RECAPTCHA` to be set.
+
+
+#### `RECAPTCHA_PRIVATE_KEY`
++ Default: `null`
++ Description: Defines the reCAPTCHA Private key
++ Note: Requires `RECAPTCHA` to be set.
+
+
+
