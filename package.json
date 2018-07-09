@@ -1,0 +1,28 @@
+{
+  "name": "@cusspvz/contact-email.microservice",
+  "version": "1.0.0",
+  "description": "A configurable Microservice that centralizes contact requests",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon src/server.js --watch src --exec babel-node",
+    "build": "babel src/ -d build/",
+    "start": "node --require 'babel-polyfill' build/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "José Moreira",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "helmet": "^3.12.1",
+    "nodemailer": "^4.6.7",
+    "recaptcha": "^1.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.17.5"
+  }
+}
