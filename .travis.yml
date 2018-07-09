@@ -1,4 +1,9 @@
 sudo: required
+language: node_js
+
+cache:
+  directories:
+    - "node_modules"
 
 services:
   - docker
@@ -8,7 +13,6 @@ script:
     npm install &&
     npm run build &&
     exit 0 || exit 1
-
   - |
     export IMAGE=cusspvz/contact-email.microservice &&
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" &&

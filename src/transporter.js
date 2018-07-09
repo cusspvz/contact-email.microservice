@@ -5,6 +5,8 @@ const transporter = Nodemailer.createTransport({
   service: env.NODEMAILER_SERVICE,
   secure: env.NODEMAILER_SECURE,
   auth: env.NODEMAILER_AUTH && {
+    type: env.NODEMAILER_TYPE,
+    accessToken: env.NODEMAILER_ACCESS_TOKEN,
     user: env.NODEMAILER_USER,
     pass: env.NODEMAILER_PASS,
   },

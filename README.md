@@ -34,13 +34,27 @@ docker run -ti cusspvz/contact-email.microservice
 + Default: `null`
 + Description: Defines a service for the transport
 
+#### `NODEMAILER_HOST`
++ Default: `false`
++ Description: Sets the host to connect to.
+
 #### `NODEMAILER_SECURE`
 + Default: `false`
-+ Description: Set this variable as `1` if you want to setup authentication
++ Description: Set this variable as `1` if you want the transport to use secure ports
 
 #### `NODEMAILER_AUTH`
 + Default: `false`
 + Description: Set this variable as `1` if you want to setup authentication
+
+#### `NODEMAILER_TYPE`
++ Default: `false`
++ Description: Sets the authentication type. (needed for OAuth2)
++ Note: Requires `NODEMAILER_AUTH` to be set
+
+#### `NODEMAILER_ACCESS_TOKEN`
++ Default: `false`
++ Description: Sets the token on authentication. (needed for OAuth2)
++ Note: Requires `NODEMAILER_AUTH` to be set
 
 #### `NODEMAILER_USER`
 + Default: `false`
