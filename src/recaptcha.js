@@ -1,5 +1,5 @@
 import { Recaptcha } from 'recaptcha'
-const { env } = process
+import env from './env'
 
 
 Recaptcha.prototype.validate = function (data = {}) {

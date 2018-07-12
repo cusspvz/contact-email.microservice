@@ -16,7 +16,9 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "handlebars": "^4.0.11",
     "helmet": "^3.12.1",
+    "is-email": "^1.0.0",
     "nodemailer": "^4.6.7",
     "recaptcha": "^1.2.1"
   },

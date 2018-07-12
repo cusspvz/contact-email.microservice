@@ -1,9 +1,13 @@
 import Nodemailer from 'nodemailer'
-const { env } = process
+import env from './env'
 
 const transporter = Nodemailer.createTransport({
   service: env.NODEMAILER_SERVICE,
+
+  host: env.NODEMAILER_HOST,
+  port: env.NODEMAILER_PORT,
   secure: env.NODEMAILER_SECURE,
+
   auth: env.NODEMAILER_AUTH && {
     type: env.NODEMAILER_TYPE,
     accessToken: env.NODEMAILER_ACCESS_TOKEN,
@@ -16,6 +20,7 @@ const transporter = Nodemailer.createTransport({
 transporter.verify(function (error, success) {
   if ( error ) {
     console.error('Transporter connect failed: There is a chance that the provided options are not correct.')
+    console.error(error)
     process.exit(1)
   }
 

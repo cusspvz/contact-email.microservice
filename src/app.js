@@ -2,8 +2,8 @@ import Express from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
 import bodyParser from 'body-parser'
+import env from './env'
 
-const { env } = process
 const app = Express()
 
 // setup middlewares
@@ -19,5 +19,16 @@ app.use(cors({
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+
+// error handling
+app.use(function errorHandler (err, req, res, next) {
+  if (res.headersSent) {
+    return next(err)
+  }
+
+  res.status(err && ( err.code || err.statusCode ) || 500)
+  res.send(err.message)
+  res.end()
+})
 
 export default app

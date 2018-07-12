@@ -20,8 +20,9 @@
 + GMail
 + SMTP
 
-### Healthcheck
-+ `/healthz`
+### Others
++ `/healthz` - healthcheck route
++ support for a random string at the subject to prevent gmail group/trimming
 
 ## Usage
 
@@ -72,6 +73,13 @@ docker run -ti --rm --env-file path/to/settings.env cusspvz/contact-email.micros
 + Description: Sets the password on authentication.
 + Note: Requires `NODEMAILER_AUTH` to be set
 
+### Email 
+
+#### `EMAIL_PREVENT_GROUPING`
++ Default: `1`
++ Description: Defines if subject gets an extra string to prevent email grouping
++ Note: Accepts 1 and 0
+
 
 ### CORS
 
@@ -87,7 +95,6 @@ docker run -ti --rm --env-file path/to/settings.env cusspvz/contact-email.micros
 + Description: Defines a CORS origin based on a comma separated string
 + Note: Please insert the urls without extra spaces
 + Example: `website.com,website.org,www.website.com,www.website.org`
-
 
 
 ### reCAPTCHA
@@ -106,6 +113,14 @@ docker run -ti --rm --env-file path/to/settings.env cusspvz/contact-email.micros
 + Default: `null`
 + Description: Defines the reCAPTCHA Private key
 + Note: Requires `RECAPTCHA` to be set.
+
+
+
+### Server
+
+#### `SERVER_PORT`
++ Default: `8080`
++ Description: Set the HTTP server port
 
 
 
