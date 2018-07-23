@@ -104,7 +104,10 @@ app.post('/email',
 
       // Prevent email grouping on clients
       if (+env.EMAIL_PREVENT_GROUPING) {
-        options.subject = `[${Date.now().toString(32)}] ${options.subject}`
+        const id = Date.now().toString(32)
+        options.subject = `[${id}] ${options.subject}`
+        options.text = `${options.text}\n\nID: [${id}]`
+        options.html = `${options.html}\n\n<!--ID: ${id}-->`
       }
 
       // check email
