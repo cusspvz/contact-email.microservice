@@ -87,7 +87,7 @@ app.post('/email',
         }
       }
 
-      if ( ! isEmail( options.to ) ) {
+      if ( ! isEmail( options.from ) ) {
         throw { message: 'The provided `from` email is not a valid email', code: 401 }
       }
 
