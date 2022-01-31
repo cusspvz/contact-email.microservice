@@ -1,4 +1,3 @@
-//import { Recaptcha } from "recaptcha";
 import env from "./env";
 
 const Recaptcha = require("recaptcha");

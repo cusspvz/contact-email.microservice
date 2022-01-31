@@ -1,11 +1,8 @@
 import Express from "express";
 import cors from "cors";
-//import helmet from "helmet";
 import bodyParser from "body-parser"
 import env from "./env"
 
-//const Express = require( "express" );
-//const cors = require( "cors" );
 const helmet = require( "helmet" );
 
 const app = Express()

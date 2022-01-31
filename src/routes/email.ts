@@ -2,11 +2,10 @@ import Handlebars from "handlebars";
 import app from "../app";
 import recaptcha from "../recaptcha";
 import transporter from "../transporter";
-//import isEmail from "is-email";
-import env from "../env";
 import { KeyObjectType } from "crypto";
 
 const isEmail = require("is-email");
+const env = require("../env");
 
 const TEMPLATE_CACHE: any = {}
 function gatherTemplate ( templateName: any ) {
@@ -55,7 +54,7 @@ app.post('/email',
     // verify recaptcha
     try {
       await recaptcha.validate({ remoteip, challenge, response })
-    } catch (err) {
+    } catch (err: any) {
       return next(new Error('reCAPTHA error: '+err.toString()))
     }
 
@@ -66,7 +65,7 @@ app.post('/email',
 
     try {
 
-      const templateName = template || env.EMAIL_DEFAULT_TEMPLATE || 'default'
+      const templateName: any = template || env.EMAIL_DEFAULT_TEMPLATE || 'default'
       const compiledTemplate = gatherTemplate(templateName)
 
       if ( ! compiledTemplate ) {
