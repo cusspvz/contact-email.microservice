@@ -1,12 +1,15 @@
-import Handlebars from 'handlebars'
-import app from '../app'
-import recaptcha from '../recaptcha'
-import transporter from '../transporter'
-import isEmail from 'is-email'
-import env from '../env'
+import Handlebars from "handlebars";
+import app from "../app";
+import recaptcha from "../recaptcha";
+import transporter from "../transporter";
+//import isEmail from "is-email";
+import env from "../env";
+import { KeyObjectType } from "crypto";
 
-const TEMPLATE_CACHE = {}
-function gatherTemplate ( templateName ) {
+const isEmail = require("is-email");
+
+const TEMPLATE_CACHE: any = {}
+function gatherTemplate ( templateName: any ) {
   const templateId = `EMAIL_TEMPLATE_${templateName.toUpperCase()}`
 
   // try to gather it from cache first
@@ -41,7 +44,7 @@ function gatherTemplate ( templateName ) {
 
 // send email
 app.post('/email',
-  async (req, res, next) => {
+  async (req: any, res: any, next: any) => {
     if ( ! recaptcha ) return next()
 
     const {
@@ -58,7 +61,7 @@ app.post('/email',
 
     next()
   },
-  async (req, res, next) => {
+  async (req: any, res: any, next: any) => {
     const { body: { template, from, to, subject, data } } = req
 
     try {

@@ -1,5 +1,5 @@
-import Nodemailer from 'nodemailer'
-import env from './env'
+import Nodemailer from "nodemailer";
+import env from "./env";
 
 const transporter = Nodemailer.createTransport({
   service: env.NODEMAILER_SERVICE,
@@ -17,7 +17,7 @@ const transporter = Nodemailer.createTransport({
 })
 
 // verify if transporter is ok
-transporter.verify(function (error, success) {
+transporter.verify(function (error: any, success: any) {
   if ( error ) {
     console.error('Transporter connect failed: There is a chance that the provided options are not correct.')
     console.error(error)

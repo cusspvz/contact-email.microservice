@@ -1,13 +1,14 @@
-import { Recaptcha } from 'recaptcha'
-import env from './env'
+//import { Recaptcha } from "recaptcha";
+import env from "./env";
 
+const Recaptcha = require("recaptcha");
 
 Recaptcha.prototype.validate = function (data = {}) {
   const rcptcha = Object.create(this)
   rcptcha.data = data
 
-  return new Promise((ful, rej) => {
-    rcptcha.verify(function (success, error_code) {
+  return new Promise((ful: any, rej: any) => {
+    rcptcha.verify(function (success: any, error_code: any) {
       if ( success ) {
         ful()
       } else {

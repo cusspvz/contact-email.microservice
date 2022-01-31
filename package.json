@@ -24,6 +24,12 @@
     "recaptcha": "^1.2.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/helmet": "^4.0.0",
+    "@types/node": "^17.0.12",
+    "@types/nodemailer": "^6.4.4",
+    "@types/recaptcha": "^0.0.27",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",

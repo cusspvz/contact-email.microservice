@@ -1,11 +1,11 @@
 import app from '../app'
 import os from 'os'
-import { name, version } from '../../package.json'
+//import { name, version } from '../../package.json'
 
 // healthcheck
-app.get('/healthz', (req, res) => {
+app.get('/healthz', (req: any, res: any) => {
   res.send({
-    name, version,
+    //name, version,
     hostname: os.hostname(),
     uptime: process.uptime(),
   })

@@ -1,8 +1,12 @@
-import Express from 'express'
-import cors from 'cors'
-import helmet from 'helmet'
-import bodyParser from 'body-parser'
-import env from './env'
+import Express from "express";
+import cors from "cors";
+//import helmet from "helmet";
+import bodyParser from "body-parser"
+import env from "./env"
+
+//const Express = require( "express" );
+//const cors = require( "cors" );
+const helmet = require( "helmet" );
 
 const app = Express()
 
@@ -21,7 +25,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // error handling
-app.use(function errorHandler (err, req, res, next) {
+app.use(function errorHandler (err: any, req: any, res: any, next: any) {
   if (res.headersSent) {
     return next(err)
   }
